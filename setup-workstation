@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -eou pipefail
+
+echo <<EOF > private.env
+# Put your personal secret variables here:
+
+WEBSITE_PASSWORD=...
+
+EOF
+
+docker-compose build
+
+echo "OK You are ready to continue"
+echo "You can now run 'docker-compose up' and continue"
