@@ -24,7 +24,7 @@ This is very simple web application.
 * SQLite
 * TailwindCSS
 
-This application has only a single working feature: a user may sign in.
+This application has only a single working feature: a user may sign in and sign out.
 
 * username: `user@example.com`
 * password: `password123`
