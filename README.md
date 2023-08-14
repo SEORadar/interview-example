@@ -1,8 +1,7 @@
 
 # SEO Radar Interview Example
 
-<img width="1311" alt="image" src="https://github.com/SEORadar/interview-example/assets/37591/51543b14-b2fd-432d-8d34-f7ffeaf1a966">
-
+<img width="1311" alt="image" src="https://github.com/SEORadar/interview-example/assets/37591/1b57442b-ceea-4e1d-9323-6023682fcc96">
 
 ## Overview
 
