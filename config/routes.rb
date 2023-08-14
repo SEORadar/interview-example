@@ -6,8 +6,11 @@ Rails.application.routes.draw do
   root "public#homepage", as: :homepage
 
   scope '', format: false do
-    get '/logout', to: 'auth#logout', as: :logout
-    post '/auth/user', to: 'auth#auth_user', as: :auth_user
+    get '/logout', to: 'signin#logout', as: :logout
+    scope '/signin' do
+      get '', to: 'signin#signin', as: :signin
+      post '', to: 'signin#signin_submit', as: :signin_submit
+    end
 
     scope 'members' do
       get '', to: 'members#dashboard', as: :members_dashboard

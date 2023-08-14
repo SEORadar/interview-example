@@ -6,15 +6,25 @@
 This is a basic Ruby on Rails app that runs within docker-compose, similar
 to our real working environment.
 
-## Your task for this exercise
+## Instructions for this Exercise
 
-There are some minor bugs in the code that must be solved.
+Please use the following workflow:
 
 * clone this repository
 * checkout a new branch for your work
-* find those bugs and correct them
+* Complete the tasks
 * make git commits to record your progress
 * push your branch and open a pull request
+
+### Task 1: Display User Info on Member Dashboard
+
+Currently, after signing in, the User will see a "dashboard" screen. Update that dashboard so it shows their email, created at, and updated at instead of "...".
+
+### Task 2: Store and Display All Login Timestamps
+
+Currently, the member dashboard only shows the time of their most recent login. Make the necessary changes to the database, models, controllers, and views so we can store and display when every login happens for a user.
+
+### Task 3: 
 
 ## What is this?
 

@@ -1,0 +1,23 @@
+
+<div class="min-h-[800px] flex flex-col justify-center sm:py-12">
+  <div class="p-10 xs:p-0 mx-auto md:w-full md:max-w-md">
+    <h1 class="font-bold text-center text-2xl mb-5">Example App</h1>  
+    <% if flash[:error] %><div class="rounded-md border-red-500 border-solid border-x-2 border-y-2 bg-red-300 p-5 mb-10"><%= flash[:error] %></div><% end %>
+    <div class="bg-white shadow w-full bg-sky-100 rounded-lg divide-y divide-sky-300">
+      <%= form_tag signin_submit_path, autocomplete: :off do |f| %>
+      <div class="px-5 py-7">
+        <label class="font-semibold text-sm text-gray-600 pb-1 block">E-mail</label>
+        <input type="email" name="email" required autocomplete="off" class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm  focus:border-sky-700 w-full" />
+        <label class="font-semibold text-sm text-gray-600 pb-1 block">Password</label>
+        <input type="password" name="password" required autocomplete="off" class="border rounded-lg px-3 py-2 mt-1 focus:border-sky-700 mb-5 text-sm w-full" />
+        <button type="submit" class="transition duration-200 bg-sky-500 hover:bg-sky-600 focus:bg-sky-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
+            <span class="inline-block mr-2">Login</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 inline-block">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+        </button>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
