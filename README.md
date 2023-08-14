@@ -48,7 +48,7 @@ Currently, the member dashboard only shows the time of their most recent login. 
 ### Task 4: "Favorite" a Product
 
 * If the current user is signed in, show a heart icon which the user can click to "heart" the product, and click again to remove the product from their favorites.
-* On the "Members Dashboard" view, add a list of their favorite products that links to each product.
+* On the "Members Dashboard" view, add a list of links to their favorite products.
 
 ### Task 5: Only show "is_active=true" Products
 
