@@ -1,6 +1,9 @@
 
 # SEO Radar Interview Example
 
+<img width="1311" alt="image" src="https://github.com/SEORadar/interview-example/assets/37591/51543b14-b2fd-432d-8d34-f7ffeaf1a966">
+
+
 ## Overview
 
 This is a basic Ruby on Rails app that runs within docker-compose, similar
