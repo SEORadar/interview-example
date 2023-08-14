@@ -2,7 +2,13 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  helper_method :signed_in?, :current_user
+
   def sign_in!(user)
+    user.transaction do
+      user.last_login_at = Time.now
+      user.save!
+    end
     session[:user_id] = user.id
   end
 
