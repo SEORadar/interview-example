@@ -1,4 +1,11 @@
 
-<div class="flex md:min-w-[1100px] mx-auto py-8 min-h-[800px]">
-  Hello, World!
+<div class="flex flex-col md:min-w-[1100px] mx-auto py-8 min-h-[800px]">
+  <h1 class="border-b border-sky-950 mb-4">Hello, World!</h1>
+
+  <h2 class="text-2xl">Shopping Categories</h2>
+  <ul class="flex flex-row ml-4">
+    <% Category.all.each do |category| %>
+    <li class="text-lg leading-8"><a href="<%= category_path(category_slug: category.slug) %>" class="hover:bg-sky-200 active:bg-sky-800 hover:rounded my-4 block px-2 py-2"><%= category.name %> &raquo;</a></li>
+    <% end %>
+  </ul>
 </div>

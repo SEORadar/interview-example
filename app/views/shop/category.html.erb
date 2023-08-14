@@ -1,0 +1,37 @@
+<div class="max-w-[1100px] flex flex-col">
+  <h2 class="text-2xl font-bold border-b border-r-sky-950 pb-1 mb-2"><%= @category.name %></h2>
+  <div class="pb-4">
+    <a href="/">Home</a>
+    <span class="mx-2 text-gray-600">/</span>
+    <%= @category.name %>
+  </div>
+  <div class="flex flex-row flex-wrap">
+    <% @category.products.each do |product| %>
+    <div
+      class="block w-1/2 my-4 px-3 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
+      <a href="<%= product_path(category_slug: @category.slug, product_slug: product.slug) %>">
+        <img
+          class="rounded-t-lg"
+          src="<%= image_url product.image_url %>" alt="Photo of <%= product.name %>"
+        />
+      </a>
+      <div class="p-6">
+        <h5
+          class="mb-2 text-xl font-medium leading-tight text-neutral-800 ">
+          <%= product.name %>
+        </h5>
+        <p class="mb-4 text-base text-neutral-600 ">
+          <%= product.description %>
+        </p>
+        <a
+          href="<%= product_path(category_slug: @category.slug, product_slug: product.slug) %>"
+          class="inline-block rounded bg-sky-900 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] "
+          data-te-ripple-init
+          data-te-ripple-color="light">
+          Details
+        </a>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

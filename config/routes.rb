@@ -12,6 +12,15 @@ Rails.application.routes.draw do
       post '', to: 'signin#signin_submit', as: :signin_submit
     end
 
+    scope 'shop' do
+      scope '/:category_slug' do
+        get '', to: 'shop#category', as: :category
+        scope '/:product_slug' do
+          get '', to: 'shop#product', as: :product
+        end
+      end
+    end
+
     scope 'members' do
       get '', to: 'members#dashboard', as: :members_dashboard
     end

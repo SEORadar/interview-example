@@ -1,0 +1,31 @@
+<div class="max-w-[1100px] flex flex-col">
+  <h2 class="text-2xl font-bold border-b border-r-sky-950 pb-1 mb-2"><%= @category.name %></h2>
+  <div class="pb-4">
+    <a href="/">Home</a>
+    <span class="mx-2 text-gray-600">/</span>
+    <a href="<%= category_path(category_slug: @category.slug) %>"><%= @category.name %></a>
+    <span class="mx-2 text-gray-600">/</span>
+    <%= @product.name %>
+  </div>
+  <div class="flex flex-row flex-wrap">
+    <div
+      class="block w-full mx-auto my-4 px-3 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
+      <img
+        class="rounded-t-lg"
+        src="<%= image_url @product.image_url %>" alt="Photo of <%= @product.name %>"
+      />
+      <div class="p-6">
+        <h5
+          class="mb-2 text-xl font-medium leading-tight text-neutral-800 ">
+          <%= @product.name %>
+        </h5>
+        <p class="mb-4 text-base text-neutral-600 ">
+          <%= number_to_currency(@product.price_usd) %>
+        </p>
+        <p class="mb-4 text-base text-neutral-600 ">
+          <%= @product.description %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
