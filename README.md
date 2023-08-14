@@ -33,6 +33,8 @@ To start the rails application so you can visit it in your web browser at http:/
 bin/dev
 ```
 
+NOTE: The username/password for signing in can be found in `db/seeds.rb`
+
 ### Task 1: Display User Info on Member Dashboard
 
 Currently, after signing in, the User will see a "dashboard" screen. Update that dashboard so it shows their email, created at, and updated at instead of "...".
@@ -63,11 +65,6 @@ This is very simple web application.
 * Ruby on Rails
 * SQLite
 * TailwindCSS
-
-This application has only a single working feature: a user may sign in and sign out.
-
-* username: `user@example.com`
-* password: `password123`
 
 ## How to use
 
