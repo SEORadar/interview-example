@@ -18,6 +18,21 @@ Please use the following workflow:
 * make git commits to record your progress
 * push your branch and open a pull request
 
+## BEFORE YOU BEGIN
+
+* Make sure you run the following commands in your rails project:
+
+```bash
+bundle install
+bin/rails db:create db:migrate db:seed
+```
+
+To start the rails application so you can visit it in your web browser at http://localhost:3000 run the following command:
+
+```bash
+bin/dev
+```
+
 ### Task 1: Display User Info on Member Dashboard
 
 Currently, after signing in, the User will see a "dashboard" screen. Update that dashboard so it shows their email, created at, and updated at instead of "...".
