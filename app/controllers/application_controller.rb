@@ -5,10 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :signed_in?, :current_user
 
   def sign_in!(user)
-    user.transaction do
-      user.last_login_at = Time.now
-      user.save!
-    end
+    UserLogin.create(user: user, login_at: Time.now)
     session[:user_id] = user.id
   end
 

@@ -7,9 +7,9 @@
       <div class="m-2 border border-gray-400 shadow-md rounded-md p-4">
         <h2 class="text-xl font-bold">Profile Details:</h2>
         <ul>
-          <li>Email: ...</li>
-          <li>Created At: ...</li>
-          <li>Updated At: ...</li>
+          <li>Email: <%= current_user.email %></li>
+          <li>Created At: <%= current_user.created_at %></li>
+          <li>Updated At: <%= current_user.updated_at %></li>
         </ul>
       </div>
     </div>
@@ -17,7 +17,9 @@
       <div class="m-2 border border-gray-400 shadow-md rounded-md p-4">
         <h2 class="text-xl font-bold">Login History:</h2>
         <ul>
-          <li><%= current_user.last_login_at %></li>
+          <% current_user.user_logins.ordered.each do |login| %>
+            <li><%= login.login_at %></li>
+          <% end %>
         </ul>
       </div>
     </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_14_011401) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_17_061119) do
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
     t.string "slug", null: false
@@ -38,12 +38,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_14_011401) do
     t.index ["slug"], name: "index_products_on_slug"
   end
 
+  create_table "user_logins", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "login_at", null: false
+    t.index ["user_id"], name: "index_user_logins_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "last_login_at"
   end
 
   add_foreign_key "product_categories", "categories", on_delete: :cascade

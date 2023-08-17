@@ -19,6 +19,14 @@
           class="mb-2 text-xl font-medium leading-tight text-neutral-800 ">
           <%= @product.name %>
         </h5>
+        <div class="flex flex-row">
+          <% @product.categories.each do |category| %>
+            <p
+              class="text-sm bg-sky-100 rounded mb-4 mr-2 px-2 py-2 hover:bg-sky-200 active:bg-sky-800">
+              <a href="<%= category_path(category_slug: category.slug) %>"><%= category.name %></a>
+            </p>
+          <% end %>
+        </div>
         <p class="mb-4 text-base text-neutral-600 ">
           <%= number_to_currency(@product.price_usd) %>
         </p>

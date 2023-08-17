@@ -9,6 +9,8 @@ class User < ApplicationRecord
   validates :password, presence: true
   has_secure_password
 
+  has_many :user_logins
+
   def password
     @password ||= Password.new(password_digest)
   end
