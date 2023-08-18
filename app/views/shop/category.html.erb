@@ -6,9 +6,9 @@
     <%= @category.name %>
   </div>
   <div class="flex flex-row flex-wrap">
-    <% @category.products.each do |product| %>
+    <% @category.products.active.each do |product| %>
     <div
-      class="block w-1/2 my-4 px-3 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
+      class="block w-1/2 my-4 px-3 pt-3 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
       <a href="<%= product_path(category_slug: @category.slug, product_slug: product.slug) %>">
         <img
           class="rounded-t-lg"
@@ -16,10 +16,14 @@
         />
       </a>
       <div class="p-6">
-        <h5
-          class="mb-2 text-xl font-medium leading-tight text-neutral-800 ">
-          <%= product.name %>
-        </h5>
+        <div class="flex flex-row justify-between">
+          <h5
+            class="mb-2 text-xl font-medium leading-tight text-neutral-800 ">
+            <%= product.name %>
+          </h5>
+          <%= render "shared/favorite_button", product: product %>
+        </div>
+
         <p class="mb-4 text-base text-neutral-600 ">
           <%= product.description %>
         </p>

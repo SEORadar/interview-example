@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root "public#homepage", as: :homepage
+  root 'public#homepage', as: :homepage
 
   scope '', format: false do
     get '/logout', to: 'signin#logout', as: :logout
@@ -24,6 +24,9 @@ Rails.application.routes.draw do
     scope 'members' do
       get '', to: 'members#dashboard', as: :members_dashboard
     end
-  end
 
+    resources :favorite_products, only: %i[create destroy]
+
+    match '*unmatched', to: 'application#not_found_method', via: :all
+  end
 end

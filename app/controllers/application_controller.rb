@@ -5,10 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :signed_in?, :current_user
 
   def sign_in!(user)
-    user.transaction do
-      user.last_login_at = Time.now
-      user.save!
-    end
+    UserLogin.create(user: user, login_at: Time.now)
     session[:user_id] = user.id
   end
 
@@ -25,5 +22,9 @@ class ApplicationController < ActionController::Base
       flash[:error] = 'Authentication Required to Continue'
       return redirect_to homepage_path(redirect_to: request.original_url)
     end
+  end
+
+  def render_not_found
+    render file: Rails.public_path.join('404.html'), status: :not_found, layout: false
   end
 end
