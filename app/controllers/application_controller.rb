@@ -23,4 +23,8 @@ class ApplicationController < ActionController::Base
       return redirect_to homepage_path(redirect_to: request.original_url)
     end
   end
+
+  def render_not_found
+    render file: Rails.public_path.join('404.html'), status: :not_found, layout: false
+  end
 end

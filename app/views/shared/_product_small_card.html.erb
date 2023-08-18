@@ -1,0 +1,15 @@
+<div
+  class="flex flex-row items-center my-4 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
+>
+  <img class="w-28 rounded-l-lg" src="<%= image_url product.image_url %>" alt="Photo of <%= product.name %>" />
+  <div class="flex flex-row justify-between w-full">
+    <p class="text-md font-medium leading-tight text-neutral-800 ml-4">
+      <a href="<%= product_path(category_slug: product.categories.first.slug, product_slug: product.slug) %>">
+        <%= product.name %>
+      </a>
+    </p>
+    <div class="mr-4">
+      <%= render "shared/favorite_button", product: product %>
+    </div>
+  </div>
+</div>

@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_17_061119) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_18_074506) do
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
     t.string "slug", null: false
     t.index ["slug"], name: "index_categories_on_slug"
+  end
+
+  create_table "favorite_products", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_favorite_products_on_product_id"
+    t.index ["user_id"], name: "index_favorite_products_on_user_id"
   end
 
   create_table "product_categories", force: :cascade do |t|

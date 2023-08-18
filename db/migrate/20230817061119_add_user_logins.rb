@@ -19,7 +19,7 @@ class AddUserLogins < ActiveRecord::Migration[7.0]
     execute <<-SQL
       UPDATE users
       SET last_login_at = (
-        SELECT login_at FROM user_logins            
+        SELECT login_at FROM user_logins
         WHERE user_logins.user_id = users.id
         ORDER BY login_at DESC
         LIMIT 1
@@ -28,4 +28,4 @@ class AddUserLogins < ActiveRecord::Migration[7.0]
 
     drop_table :user_logins
   end
-end   
+end

@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_secure_password
 
   has_many :user_logins
+  has_many :favorite_products
+  has_many :favorites, through: :favorite_products, source: :product
 
   def password
     @password ||= Password.new(password_digest)
@@ -19,5 +21,4 @@ class User < ApplicationRecord
     @password = Password.create(new_password)
     self.password_digest = @password
   end
-
 end

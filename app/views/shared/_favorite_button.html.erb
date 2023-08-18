@@ -1,0 +1,13 @@
+<div class="w-5">
+  <% if signed_in? %>
+    <% if current_user.favorite_products.exists?(product_id: product.id) %>
+      <%= button_to favorite_product_path(product), method: :delete do %>
+        <%= image_tag "icons/heart_full.svg", class: "w-full", alt: "heart icon" %>
+      <% end %>
+    <% else %>
+      <%= button_to favorite_products_path(product_id: product) do %>
+        <%= image_tag "icons/heart.svg", class: "w-full", alt: "heart icon" %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
